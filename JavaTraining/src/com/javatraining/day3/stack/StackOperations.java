@@ -14,6 +14,7 @@ public class StackOperations {
 
 		// pushing elements in stack if stack is empty
 		if (myStack.isEmpty()) {
+			System.out.println("PushElements...\n");
 			myStack.push("Ram");
 			myStack.push("Krishna");
 			myStack.push("Sita");
@@ -27,15 +28,16 @@ public class StackOperations {
 
 		System.out.println("Stack : " + myStack);
 
+		System.out.println("Pop Elements...");
 		if (!myStack.isEmpty()) {
 			System.out.println(myStack.pop());
 			System.out.println(myStack.pop());
 			System.out.println(myStack.pop());
-			
+
 		}
 
-		System.out.println(myStack.capacity());
+		System.out.println("\nStack Capacity : " + myStack.capacity()); //extends as more memory required in multiples of 10
 
-		System.out.println("Stack after Operations : " + myStack);
+		System.out.println("\nStack after Operations : " + myStack);
 	}
 }
