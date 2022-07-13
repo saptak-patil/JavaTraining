@@ -34,8 +34,8 @@ public class ArrayListOperations {
 		Collections.sort(myList);
 		System.out.println("\nSorted List : " + myList);
 
-		ArrayList<String> newList = new ArrayList<String>();
-		newList = (ArrayList<String>) myList.clone();
+		Object newList = new ArrayListOperations();
+		newList = myList.clone();
 		System.out.println("\nCloned List : " + newList);
 
 		System.out.println("\nContains 'Ram' : " + myList.contains("Ram"));

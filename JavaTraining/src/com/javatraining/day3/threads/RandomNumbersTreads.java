@@ -32,6 +32,13 @@ class GenNumber extends Thread {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }
 
@@ -45,8 +52,9 @@ public class RandomNumbersTreads {
 		GenNumber obj = new GenNumber();
 
 		try {
-			for (int i = 0; i < 10; i++) {
+			for(int i = 0; i < 10; i++) {
 				obj.start();
+//				obj.stop();
 			}
 		} catch (IllegalThreadStateException e) {
 			e.printStackTrace();

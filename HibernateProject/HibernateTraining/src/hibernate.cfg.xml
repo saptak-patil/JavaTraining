@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect"> org.hibernate.dialect.MySQL5Dialect </property>
+		<!-- org.hibernate.dialect.MySQLDialect -->
+
+		<property name="hibernate.connection.driver_class"> com.mysql.jdbc.Driver </property>
+
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url"> jdbc:mysql://localhost:3306/ecommerce </property>
+		<property name="hibernate.connection.username"> root </property>
+		<property name="hibernate.connection.password"> root </property>
+
+		<!-- SQL Mapping and Table Creation -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- List of POJO Class mapping files -->
+		<mapping class="com.demo.entity.Product" />
+
+	</session-factory>
+</hibernate-configuration>
+
+<!-- 
+SQL Table Create, Update, Drop
+
+If property hibernate.ddl-auto = update, then it will not create the tables automatically.
+To create tables automatically, you need to set the property to hibernate.ddl-auto = create
+
+The list of option which is used in the spring boot are
+1. validate: validate the schema, makes no changes to the database.
+
+2. update: update the schema.
+
+3. create: creates the schema, destroying previous data.
+
+4. create-drop: drop the schema at the end of the session
+
+5. none: is all other cases
+
+Note : So for the first time you can set it to create and then next time on-wards you should set it to update.
+ -->
